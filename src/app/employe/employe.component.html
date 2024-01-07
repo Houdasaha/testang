@@ -1,0 +1,145 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Employe Bnidarak</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addemployee" type="submit">Ajouter Employe</button>
+          </div>
+        </div>
+      </nav>
+      <table class="table table-hover">
+        <thead>
+          <tr >
+            <th scope="col">id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Type de travail</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>1</td>
+            <td>houda</td>
+            <td>saha</td>
+            <td>55tt</td>
+            <td>hvcf</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#modifieremp" (click)="modifieremp()">Modifier</button>
+                    <button type="button" class="btn btn-outline-danger" >Supprimer</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    
+  
+  <!-- Modal add -->
+  <div class="modal fade" id="addemployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bnidarak</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="empDetail">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">id </label>
+                  <input type="text" formControlName="id" class="form-control" id="id" aria-describedby="emailHelp">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nom </label>
+                    <input type="text" formControlName="Nom" class="form-control" id="Nom" aria-describedby="emailHelp">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Prenom </label>
+                    <input type="text" formControlName="Prenom" class="form-control" id="Prenom" aria-describedby="emailHelp">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Contact</label>
+                    <input type="text" formControlName="Contact" class="form-control" id="Contact" aria-describedby="emailHelp">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">type_travail </label>
+                    <input type="text" formControlName="type_travail" class="form-control" id="type_travail" aria-describedby="emailHelp">
+                    
+                  </div>
+
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary" (click)="add()">Ajouter</button>
+                  </div>
+              </form>
+
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Modal modifieremp -->
+<div class="modal fade" id="modifieremp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier Employe</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="empDetail">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">id </label>
+            <input type="text" formControlName="id" class="form-control" id="id" aria-describedby="emailHelp">
+            
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nom </label>
+              <input type="text" formControlName="Nom" class="form-control" id="Nom" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Prenom </label>
+              <input type="text" formControlName="Prenom" class="form-control" id="Prenom" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Contact</label>
+              <input type="text" formControlName="Contact" class="form-control" id="Contact" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">type_travail </label>
+              <input type="text" formControlName="type_travail" class="form-control" id="type_travail" aria-describedby="emailHelp">
+              
+            </div>
+
+          
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-outline-success" (click)="modifieremp()">Modifier</button>
+            </div>
+        </form>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+</div>
